@@ -1,0 +1,204 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: #1d1d1f;
+}
+
+h1 {
+    color: #1d1d1f;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+.game-container {
+    display: flex;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#game-board {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+    width: 300px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.game-info h3 {
+    color: #1d1d1f;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+}
+
+.next-piece {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+    width: 120px;
+    height: 120px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stats, .controls {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1d1d1f;
+    padding: 20px;
+    border-radius: 12px;
+    width: 120px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stats p, .controls p {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #424245;
+}
+
+.cell {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+}
+
+.tetromino {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.I {
+    background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+}
+
+.O {
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+}
+
+.T {
+    background: linear-gradient(135deg, #9b5de5 0%, #7b2cbf 100%);
+}
+
+.S {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+.Z {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.J {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.L {
+    background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: #1d1d1f;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.game-over h2 {
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.game-over p {
+    color: #424245;
+    margin-bottom: 25px;
+}
+
+.game-over button {
+    background: #0071e3;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 980px;
+    transition: all 0.2s ease;
+}
+
+.game-over button:hover {
+    background: #0077ed;
+    transform: translateY(-1px);
+}
+
+.game-over button:active {
+    transform: translateY(0);
+}
+
+.touch-controls {
+    color: #86868b;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .game-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .stats, .controls {
+        width: 140px;
+    }
+} 
